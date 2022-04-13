@@ -129,12 +129,7 @@ let dishes = [
 // function problemOne(){
 
 //     let results = dishes.filter(function(el){
-//         if(el.cuisine == "Vegetarian"){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
+//         return el.cuisine == "Vegetarian";
 //     })
 //     return results;
 // }
@@ -145,12 +140,7 @@ let dishes = [
 
 // function problemTwo(){
 //     let results = dishes.filter(function(el){
-//         if (el.cuisine == "Italian" && el.servings > 5){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
+//         return el.cuisine == "Italian" && el.servings > 5;
 //     })
 //     return results;
 // }
@@ -161,12 +151,7 @@ let dishes = [
 
 // function problemThree(){
 //     let results = dishes.filter(function(el){
-//         if(el.id == el.servings){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
+//         return el.id == el.servings;
 //     })
 //     return results;
 // }
@@ -177,12 +162,7 @@ let dishes = [
 
 // function problemFour(){
 //     let results = dishes.filter(function(el){
-//         if(el.servings%2 == 0){
-//             return true;
-//         }
-//         else{
-//             return false
-//         }
+//         return el.servings%2 == 0;
 //     })
 //     return results
 // }
@@ -193,12 +173,7 @@ let dishes = [
 
 // function problemFive(){
 //     let results = dishes.filter(function(el){
-//         if(el.ingredients[0] == "tomato" && el.ingredients[1] == "cheese"){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
+//         return el.ingredients[0] == "tomato" && el.ingredients[1] == "cheese";
 //     })
 //     return results;
 // }
@@ -209,16 +184,16 @@ let dishes = [
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
-function problemSix(){
-    let allCuisines = dishes.map(function(el){
-        return el.cuisine;
-    })
-    let results = allCuisines.filter(function(el,index){
-       return allCuisines.indexOf(el) == index
-    })
-    return results;
-}
-console.log(problemSix())
+// function problemSix(){
+//     let allCuisines = dishes.map(function(el){
+//         return el.cuisine;
+//     })
+//     let results = allCuisines.filter(function(el,index){
+//        return allCuisines.indexOf(el) == index;
+//     })
+//     return results;
+// }
+// console.log(problemSix())
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map 
@@ -236,12 +211,7 @@ console.log(problemSix())
 
 // function problemEight(){
 //     let results = dishes.filter(function(el){
-//         if(el.cuisine == "Vegetarian"){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
+//         return el.cuisine == "Vegetarian";
 //     })
 //     let finalResults = results.map(function(el){
 //         return el.cuisine + " " + el.name;
@@ -257,12 +227,7 @@ console.log(problemSix())
 
 // function problemNine(){
 //     let results = dishes.filter(function(el){
-//         if(el.ingredients.includes("chickpea")){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
+//         return el.ingredients.includes("chickpea");
 //     })
 //     return results;
 // }
@@ -286,22 +251,17 @@ console.log(problemSix())
 
 //11. Create a function that will return an array of any objects that do not share a cuisine type with any other objects.
 
-// function problemEleven(){
-//     let results = dishes.filter(function(el){
-//         let count = 0;
-//         for(let i = 0; i < dishes.length;i++){
-//             if(el.cuisine == dishes[i].cuisine){
-//                 count += 1;
-//             }
-//         }
-//         if(count == 1){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//     })
-//     return results;
-// }
-// console.log(problemEleven())
+function problemEleven(){
+    let results = dishes.filter(function(el){
+        let count = 0;
+        for(let i = 0; i < dishes.length;i++){
+            if(el.cuisine == dishes[i].cuisine){
+                count += 1;
+            }
+        }
+        return count == 1;
+    })
+    return results;
+}
+console.log(problemEleven())
 
